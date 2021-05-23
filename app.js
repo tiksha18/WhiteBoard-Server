@@ -17,10 +17,10 @@ app.use(cors());
 
 // acts like API
 // app => get type request(to get data) from client side(chrome) => when address is /home in URL => in response server(app.js) gives "welcom to homepage"
-// app.get("/home", function(req, res)   
-// {
-//     res.end("welcome to homepage");
-// })
+app.get("/", function(req, res)   
+{
+    res.end("Welcome !");
+})
 
 const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
@@ -48,8 +48,11 @@ io.on('connection', function(socket)
     })
 });
 
-
+let port = process.env.PORT || 3000;   //heroku se aayega
 http.listen(3000, function()
 {
     console.log("Server is listening at 3000 port !");
 })
+
+//TCP => to identify server uniquely
+//IP Address => to identify machine on a network uniquely 
