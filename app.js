@@ -49,9 +49,9 @@ io.on('connection', function(socket)
 });
 
 let port = process.env.PORT || 3000;   //heroku se aayega
-http.listen(3000, function()
+http.listen(port, function()
 {
-    console.log("Server is listening at 3000 port !");
+    console.log("Server started !");
 })
 
 //TCP => to identify server uniquely
